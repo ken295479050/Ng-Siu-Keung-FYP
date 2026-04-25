@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Five Taste is a cha chaan teng in Tuen Mun. Hung Kiu and Lam Tei. Breakfast, lunch, afternoon tea."/>
+    <meta name="keywords" content="Five Tastes, Tuen Mun, Cha Chaan Teng, Hong Kong Cafe"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Five Taste</title>
+    <link rel="stylesheet" href="五味(EN).css">
+    <style>
+        /* 餐牌專用樣式 */
+        .menu-section {
+            margin-bottom: 50px;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .menu-section h2 {
+            background-color: var(--primary-orange, #FF8C42);
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1.5em;
+            margin-bottom: 25px;
+        }
+        
+        .menu-section h3 {
+            color: var(--primary-orange, #FF8C42);
+            border-left: 4px solid var(--primary-orange, #FF8C42);
+            padding-left: 12px;
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* 統一價格放右上角 */
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid #FFD93D;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .price-header h4 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        
+        .price-header .price {
+            font-size: 1.3em;
+            color: var(--deep-red, #C41E3A);
+            font-weight: bold;
+        }
+        
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .item-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        /* 英文版：英文大、中文細 */
+        .item-list .item-name-en {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--dark-gray, #2C2C2C);
+        }
+        
+        .item-list .item-name {
+            font-size: 0.85em;
+            color: #888;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
+        .menu-item {
+            border-bottom: 1px dashed #eee;
+            padding: 10px 0;
+        }
+        
+        .menu-item .item-name-en {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--dark-gray, #2C2C2C);
+        }
+        
+        .menu-item .item-name {
+            font-size: 0.85em;
+            color: #888;
+            display: block;
+            margin-top: 3px;
+        }
+        
+        .price {
+            color: var(--deep-red, #C41E3A);
+            font-weight: bold;
+            float: right;
+        }
+        
+        .remark {
+            background-color: #FFF8F0;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .remark i {
+            margin-right: 8px;
+        }
+        
+        .two-col-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .two-col-list .item-name-en {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--dark-gray, #2C2C2C);
+            display: block;
+        }
+        
+        .two-col-list .item-name {
+            font-size: 0.85em;
+            color: #888;
+            display: block;
+            margin-top: 3px;
+        }
+        
+        hr {
+            margin: 15px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #FFD93D, transparent);
+        }
+        
+        .badge {
+            background-color: #FFD93D;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            margin-left: 8px;
+            color: #2C2C2C;
+        }
+    
+        .drinks-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .drinks-table th,
+        .drinks-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .drinks-table th {
+            text-align: left;
+            border-bottom: 2px solid #FFD93D;
+        }
+        
+        .drinks-table td:nth-child(2),
+        .drinks-table td:nth-child(3),
+        .drinks-table th:nth-child(2),
+        .drinks-table th:nth-child(3) {
+            text-align: center;
+        }
+        
+        /* 飲品表格：英文大、中文細 */
+        .drinks-table .en-name {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--dark-gray, #2C2C2C);
+        }
+        
+        .drinks-table .cn-name {
+            font-size: 0.85em;
+            color: #888;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Five Taste</h1>
+            </div>
+            <nav>
+                <a href="五味(EN) p.1.html">Home</a>
+                <a href="五味(EN) p.2.html">About Us</a>
+                <a href="五味(EN) p.3.html">Menu</a>
+                <span class="lang-switch">
+                    <a href="五味(CN) p.3.html">繁</a> | <a href="五味(EN) p.3.html">EN</a>
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- ==================== Breakfast ==================== -->
+            <div class="menu-section" id="breakfast">
+                <h2>🍳 Energizing Breakfast</h2>
+                <p style="margin-bottom: 20px;"><em>Served daily 6:30 - 11:30</em></p>
+                
+                <h3>📦 On-the-go Breakfast</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="item-name-en">Satay Beef</span>
+                        <span class="price">$35</span>
+                        <span class="item-name">沙嗲牛肉</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Luncheon Meat & Fried Egg</span>
+                        <span class="price">$35</span>
+                        <span class="item-name">餐肉煎蛋</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Shredded Pork with Preserved Vegetables</span>
+                        <span class="price">$35</span>
+                        <span class="item-name">雪菜肉絲</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Corn & Ham</span>
+                        <span class="price">$35</span>
+                        <span class="item-name">粟米火腿</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Spiced Pork Cubes</span>
+                        <span class="price">$35</span>
+                        <span class="item-name">五香肉丁</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Sausage & Fried Egg</span>
+                        <span class="price">$35</span>
+                        <span class="item-name">腸仔煎蛋</span>
+                    </div>
+                </div>
+                
+                <div class="remark">
+                    <i>🍜</i> Choose one noodle type: Rice Vermicelli · Rice Noodles · Instant Noodles · Pasta · Macaroni
+                    <br>
+                    <i>選一款麵底：米粉 · 米線 · 公仔麵 · 意粉 · 通粉</i>
+                </div>
+                
+                <!-- Sandwich Breakfast -->
+                <h3>🥪 Sandwich Breakfast</h3>
+                <div class="menu-grid">
+                    <div class="menu-item"><span class="item-name-en">Single Filling</span> <span class="price">$29</span><span class="item-name">單款</span></div>
+                    <div class="menu-item"><span class="item-name-en">Double Fillings</span> <span class="price">$31</span><span class="item-name">雙款</span></div>
+                    <div class="menu-item"><span class="item-name-en">Triple Fillings</span> <span class="price">$33</span><span class="item-name">三款</span></div>
+                </div>
+                
+                <div class="remark">
+                    <i>🥓</i> Filling options: Luncheon Meat · Bacon · Tomato · Scrambled Egg · Ham · Cheese · Lettuce · Tuna
+                    <br>
+                    <i>配料選擇：餐肉 · 煙肉 · 蕃茄 · 炒蛋 · 火腿 · 芝士 · 生菜 · 吞拿魚</i>
+                </div>
+                
+                <!-- Western Style Breakfast -->
+                <h3>🍽️ Western Style Breakfast</h3>
+                <div class="menu-item">
+                    <span class="item-name-en">Burger Patty · Chicken Wings · Pan-fried Chicken Chop · Pan-fried Pork Chop</span>
+                    <span class="price">$38 Each</span>
+                    <span class="item-name">漢堡扒 · 雞中翼 · 香煎雞扒 · 香煎豬扒</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name-en">Deep-fried Pork Cutlet · Deep-fried Fish Fillet</span>
+                    <span class="price">$40 Each</span>
+                    <span class="item-name">吉列豬扒 · 吉列魚柳</span>
+                </div>
+                <div class="remark">
+                    <i>🌽</i> Served with Buttered Corn & Danish Toast
+                    <br>
+                    <i>🥓</i> Choose two sides: Sausage · Ham · Luncheon Meat · Bacon · Scrambled Egg · Fried Egg
+                    <br>
+                    <i>配牛油粟米及丹麥多士</i>
+                    <br>
+                    <i>任選兩款配料：腸仔 · 火腿 · 餐肉 · 煙肉 · 炒蛋 · 煎蛋</i>
+                </div>
+                
+                <!-- Breakfast Noodles -->
+                <h3>🍜 Breakfast Noodles</h3>
+                <div class="menu-item">
+                    <span class="item-name-en">Satay Beef · Shredded Pork with Preserved Vegetables · Spiced Pork Cubes</span>
+                    <span class="price">$40 Each</span>
+                    <span class="item-name">沙嗲牛肉 · 雪菜肉絲 · 五香肉丁</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name-en">Pan-fried Chicken Chop · Burger Patty · Corn & Ham · Pan-fried Pork Chop</span>
+                    <span class="price">$42 Each</span>
+                    <span class="item-name">香煎雞扒 · 漢堡扒 · 粟米火腿 · 香煎豬扒</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name-en">Deep-fried Pork Cutlet · Deep-fried Fish Fillet · Chicken Wings</span>
+                    <span class="price">$45 Each</span>
+                    <span class="item-name">吉列豬扒 · 吉列魚柳 · 雞中翼</span>
+                </div>
+               
+                <div class="remark">
+                    <i>🍜</i> Choose one noodle type: Rice Vermicelli · Rice Noodles · Instant Noodles · Pasta · Macaroni
+                    <br>
+                    <i>🥓</i> Choose two sides: Sausage · Ham · Luncheon Meat · Bacon · Scrambled Egg · Fried Egg
+                    <br>
+                    <i>🍞</i> Served with Danish Toast
+                    <br>
+                    <i>選一款麵底：米粉 · 米線 · 公仔麵 · 意粉 · 通粉</i>
+                    <br>
+                    <i>任選兩款配料：腸仔 · 火腿 · 餐肉 · 煙肉 · 炒蛋 · 煎蛋</i>
+                    <br>
+                    <i>配：丹麥多士</i>
+                </div>
+                
+                <div class="important-remark">
+                    <p>📌 Notes</p>
+                    <div>☕ All breakfast sets include a Hot Drink. Add <strong>$3</strong> for Iced Drinks</div>
+                    <div>🍜 Noodle Upgrade: Add <strong>$4</strong> for Demae Itcho or Udon; <strong class="free">free</strong> upgrade to Thick Tomato Soup</div>
+                    <div>🍞 Toast Upgrade: Add <strong>$3</strong> for Crispy Bun with Condensed Milk & Butter</div>
+                    <i>所有早餐附送熱飲（凍飲加 $3）</i>
+                    <br>
+                    <i>麵底升級：轉出前一丁或烏冬加 $4，可免費轉鮮蕃茄濃湯</i>
+                    <br>
+                    <i>多士升級：轉奶油豬加 $3</i>
+                </div>
+            </div>
+                
+            <!-- ==================== Lunch ==================== -->
+            <div class="menu-section" id="lunch">
+                <h2>🍚 Lunch Menu</h2>
+                <p style="margin-bottom: 20px;"><em>Served from 11:30 daily</em></p>
+                
+                <h3>Weekly Specials</h3>
+                <a href="https://www.facebook.com/profile.php?id=100071394066028&sk=photos" class="official-link">👉 Check our Facebook - updated every Monday</a>
+                
+                <h3>🥩 Western Grill Set</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="item-name-en">Pan-fried Pork Chop with Fried Egg</span>
+                        <span class="price">$50</span>
+                        <span class="item-name">香煎豬扒煎蛋</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Deep-fried Fish Fillet with Ham</span>
+                        <span class="price">$50</span>
+                        <span class="item-name">吉列魚柳火腿</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Burger Patty with Fried Egg</span>
+                        <span class="price">$50</span>
+                        <span class="item-name">漢堡扒煎蛋</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Deep-fried Pork Cutlet with Luncheon Meat</span>
+                        <span class="price">$50</span>
+                        <span class="item-name">吉列豬扒餐肉</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Pan-fried Chicken Chop with Bacon</span>
+                        <span class="price">$50</span>
+                        <span class="item-name">香煎雞扒煙肉</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name-en">Chicken Wings with Sausage</span>
+                        <span class="price">$50</span>
+                        <span class="item-name">雞中翼腸仔</span>
+                    </div>
+                </div>
+
+                <div class="remark">
+                    <i>🍝</i> Served with Rice or Pasta (Choose one)
+                    <br>
+                    <i>🍛</i> Choose one sauce: Black Pepper · Onion · Tomato · Garlic · Curry · Scallion Oil
+                    <br>
+                    <i>配: 飯 或 意粉 (二選一)</i>
+                    <br>
+                    <i>醬汁可選：黑椒 · 洋蔥 · 番茄 · 蒜蓉 · 咖喱 · 蔥油</i>
+                </div>
+                
+                <!-- Signature Five-Taste Grill -->
+                <div class="price-header">
+                    <h3>🍗 Signature Five-Taste Grill</h3>
+                    <span class="price">Choose any two items $56</span>
+                </div>
+                <div class="two-col-list">
+                    <div><span class="item-name-en">Pan-fried Pork Chop</span><span class="item-name">香煎豬扒</span></div>
+                    <div><span class="item-name-en">Hong Kong Style Crispy Chicken Leg</span><span class="item-name">生炸雞髀</span></div>
+                    <div><span class="item-name-en">Pan-fried Chicken Chop</span><span class="item-name">香煎雞扒</span></div>
+                    <div><span class="item-name-en">Bacon & Ham</span><span class="item-name">煙肉火腿</span></div>
+                    <div><span class="item-name-en">Cervelat Sausage</span><span class="item-name">司華力腸</span></div>
+                    <div><span class="item-name-en">Burger Patty</span><span class="item-name">漢堡扒</span></div>
+                    <div><span class="item-name-en">Deep-fried Fish Fillet</span><span class="item-name">吉列魚柳</span></div>
+                    <div><span class="item-name-en">Chicken Wings</span><span class="item-name">雞中翼</span></div>
+                    <div><span class="item-name-en">Deep-fried Pork Cutlet</span><span class="item-name">吉列豬扒</span></div>
+                    <div><span class="item-name-en">Sausage & Fried Egg</span><span class="item-name">腸仔煎蛋</span></div>
+                    <div><span class="item-name-en">Luncheon Meat & Fried Egg</span><span class="item-name">餐肉煎蛋</span></div>
+                </div>
+    
+                <div class="remark">
+                    <i>🍝</i> Served with Rice, Fries & Vegetables, or Pasta (Choose one)
+                    <br>
+                    <i>🍛</i> Choose one sauce: Black Pepper · Onion · Tomato · Garlic · Curry · Scallion Oil
+                    <br>
+                    <i>配:白飯 、 薯菜 或 意粉（三選一）</i>
+                    <br>
+                    <i>醬汁可選：黑椒 · 洋蔥 · 番茄 · 蒜蓉 · 咖喱 · 蔥油</i>
+                </div>
+           
+                <!-- Regular Noodle Set -->
+                <h3>🍜 Regular Noodle Set</h3>
+                <div class="menu-item">
+                    <span class="item-name-en">Pan-fried Pork Chop · Pan-fried Chicken Chop · Satay Beef · Spiced Pork Cubes · Shredded Pork with Preserved Vegetables · Chicken Wings · Burger Patty</span>
+                    <span class="price">$45 Each</span>
+                    <span class="item-name">香煎豬扒 · 香煎雞扒 · 沙嗲牛肉 · 五香肉丁 · 雪菜肉絲 · 雞中翼 · 漢堡扒</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name-en">Deep-fried Fish Fillet · Deep-fried Pork Cutlet</span>
+                    <span class="price">$50 Each</span>
+                    <span class="item-name">吉列魚柳 · 吉列豬扒</span>
+                </div>
+               
+                <div class="remark">
+                    <i>🍜</i> Choose one noodle type: Rice Vermicelli · Rice Noodles · Instant Noodles · Pasta · Macaroni (Add $4 for Demae Itcho or Udon, free upgrade to Thick Tomato Soup)
+                    <br>
+                    <i>🍞</i> Served with Ham Omelette and Danish Toast (Add $3 for Crispy Bun with Condensed Milk & Butter)
+                    <br>
+                    <i>選一款麵底：米粉 · 米線 · 公仔麵 · 意粉 · 通粉（轉出前一丁或烏冬加 $4，可免費轉鮮蕃茄濃湯）</i>
+                    <br>
+                    <i>配：火腿奄列及丹麥多士（轉奶油豬加 $3）</i>
+                </div>
+
+                <div class="price-header">
+                    <h3>🍟 Snacks</h3>
+                    <span class="price">$28 Each</span>
+                </div>
+                <div class="two-col-list">
+                    <div><span class="item-name-en">French Fries</span><span class="item-name">炸薯條</span></div>
+                    <div><span class="item-name-en">Hong Kong Style Crispy Chicken Leg</span><span class="item-name">炸雞髀</span></div>
+                    <div><span class="item-name-en">Chicken Wings</span><span class="item-name">雞中翼</span></div>
+                    <div><span class="item-name-en">Deep-fried Pork Cutlet</span><span class="item-name">吉列豬扒</span></div>
+                    <div><span class="item-name-en">Deep-fried Fish Fillet</span><span class="item-name">吉列魚柳</span></div>
+                    <div><span class="item-name-en">Pan-fried Chicken Chop</span><span class="item-name">香煎雞扒</span></div>
+                    <div><span class="item-name-en">Fruit Salad</span><span class="item-name">雜果沙律</span></div>
+                    <div><span class="item-name-en">Hong Kong Style French Toast</span><span class="item-name">重量級西多</span></div>
+                    <div><span class="item-name-en">Signature Pork Chop Bun</span><span class="item-name">豬扒包</span></div>
+                </div>
+                
+                <div class="important-remark">
+                    <p>📌 Notes</p>
+                    <div>☕ All lunch sets<strong> (except snacks) </strong> include Soup <strong class="free">(while stocks last)</strong> and a Hot Drink. Add <strong>$3</strong> for Iced Drinks, <strong>$4</strong> for Coke, <strong>$4</strong> for Red Bean Ice</div>
+                    <i>除小食外所有午餐附送：餐湯（送完即止）及熱飲（凍飲加 $3、可樂加 $4、紅豆冰加 $4）</i>
+                </div>
+            </div>
+            
+            <!-- ==================== Afternoon Tea ==================== -->
+            <div class="menu-section" id="tea">
+                <h2>☕ Afternoon Tea</h2>
+                <p style="margin-bottom: 20px;"><em>Served from 14:00 daily</em></p>
+                
+                <div class="price-header">
+                    <h3>Afternoon Tea Set</h3>
+                    <span class="price">$40 Each</span>
+                </div>
+                <div class="two-col-list">
+                    <div><span class="item-name-en">Chicken Wings</span><span class="item-name">雞中翼</span></div>
+                    <div><span class="item-name-en">Pork Chop Bun</span><span class="item-name">豬扒包</span></div>
+                    <div><span class="item-name-en">Hong Kong Style Crispy Chicken Leg</span><span class="item-name">生炸雞脾</span></div>
+                    <div><span class="item-name-en">Deep-fried Pork Cutlet</span><span class="item-name">吉列豬扒</span></div>
+                    <div><span class="item-name-en">Deep-fried Fish Fillet</span><span class="item-name">吉列魚柳</span></div>
+                    <div><span class="item-name-en">Pan-fried Chicken Chop</span><span class="item-name">香煎雞扒</span></div>
+                    <div><span class="item-name-en">Pan-fried Pork Chop</span><span class="item-name">香煎豬扒</span></div>
+                    <div><span class="item-name-en">Pork Fillet Burger</span><span class="item-name">豬柳漢堡包</span></div>
+                </div>
+                
+                <div class="remark">
+                    <i>🍽️</i> Choose one side: French Fries · Ham Omelette · Fruit Salad · Cervelat Sausage · Danish Toast · Hong Kong Style French Toast · Tuna Toast
+                    <br>
+                    <i>配菜可選：薯條 · 火腿奄列 · 雜果沙律 · 司華力腸 · 丹麥多士 · 西多士 · 吞拿魚多士</i>
+                </div>
+
+                <div class="important-remark">
+                    <p>Add Mini Noodle +$8</p>
+                    <div>🥓 Choose one noodle main: Satay Beef · Ham · Shredded Pork with Preserved Vegetables · Spiced Pork Cubes</div>
+                    <div>🍜 Choose one noodle type: Rice Vermicelli · Rice Noodles · Instant Noodles · Macaroni</div>
+                    <div>☕ All afternoon tea sets include a Hot Drink. Add <strong>$3</strong> for Iced Drinks, <strong>$4</strong> for Coke, <strong>$4</strong> for Red Bean Ice</div>
+                    <i>選一款粉麵配料：沙嗲牛肉 · 火腿 · 雪菜肉絲 · 五香肉丁</i>
+                    <br>
+                    <i>及一款麵底：米粉 · 米線 · 公仔麵 · 通粉</i>
+                    <br>
+                    <i>下午茶附送熱飲（凍飲加 $3、可樂加 $4、紅豆冰加 $4）</i>
+                </div>
+            </div>
+
+            <!-- ==================== Beverages ==================== -->
+            <div class="menu-section" id="drinks">
+                <h2>🥤 Beverages</h2>
+                
+                <table class="drinks-table">
+                    <tr>
+                        <th></th>
+                        <th>Hot</th>
+                        <th>Iced</th>
+                    </tr>
+                    <tr><td><span class="en-name">Milk Tea</span> <span class="cn-name">奶茶</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Coffee</span> <span class="cn-name">咖啡</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Yuen Yeung</span> <span class="cn-name">鴛鴦</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Lemon Tea</span> <span class="cn-name">檸茶</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Lemon Water</span> <span class="cn-name">檸水</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Watercress Honey</span> <span class="cn-name">菜蜜</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Ovaltine</span> <span class="cn-name">阿華田</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Horlicks</span> <span class="cn-name">好立克</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Almond Milk</span> <span class="cn-name">杏仁霜</span></td><td>$17</td><td>$19</td></tr>
+                    <tr><td><span class="en-name">Coke</span> <span class="cn-name">可樂</span></td><td>-</td><td>$16</td></tr>
+                    <tr><td><span class="en-name">Lemon Coke</span> <span class="cn-name">檸樂</span></td><td>-</td><td>$20</td></tr>
+                    <tr><td><span class="en-name">Red Bean Ice</span> <span class="cn-name">紅豆冰</span></td><td>-</td><td>$20</td></tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 0.8em;">© This website is an original work by a student from the Department of Translation, Lingnan University for his final year project. Designed for Five Taste. All content is based on actual interviews. The photos are provided by the restaurant and taken by the student. Do not reproduce them without prior permission. Special thanks to Boss Choy and Boss Leung for their time and support.</p>
+    </footer>
+</body>
+</html>

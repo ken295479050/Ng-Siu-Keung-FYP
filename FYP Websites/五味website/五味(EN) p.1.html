@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Five Taste is a Hong Kong Style cha chaan teng in Tuen Mun. Hung Kiu and Lam Tei. Breakfast, lunch, afternoon tea."/>
+    <meta name="keywords" content="Five Tastes, Tuen Mun, Cha Chaan Teng, Hong Kong Cafe"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Five Taste</title>
+    <link rel="stylesheet" href="五味(EN).css">
+    <style>
+        /* 首頁專用樣式 */
+        .welcome {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--soft-cream) 0%, var(--pure-white) 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .welcome h2 {
+            font-size: 1.8em;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .welcome p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .menu-btn {
+            background-color: var(--primary-orange);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .menu-btn:hover {
+            background-color: var(--deep-red);
+            transform: translateY(-3px);
+        }
+        
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .shop-card {
+            background-color: var(--pure-white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .shop-card h3 {
+            color: var(--primary-orange);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .shop-card p {
+            margin: 8px 0;
+        }
+        
+        .info-note {
+            background-color: var(--warm-yellow);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .info-highlight {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--deep-red, #C41E3A);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-orange);
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Five Taste</h1>
+            </div>
+            <nav>
+                <a href="五味(EN) p.1.html">Home</a>
+                <a href="五味(EN) p.2.html">About Us</a>
+                <a href="五味(EN) p.3.html">Menu</a>
+                <span class="lang-switch">
+                    <a href="五味(CN) p.1.html">繁</a> | <a href="五味(EN) p.1.html">EN</a>
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Welcome -->
+            <div class="welcome">
+                <h2>Welcome.</h2>
+                <p>We are here whether you are in Lam Tei or Hung Kiu.<br>
+                We turn on the lights at 6:30am and wait for you to have breakfast. And we're still here at 2:00pm. Welcome here to take a break.<br>
+                Whenever you are in Tuen Mun, find us. A hot meal and a seat are always ready for you.</p>
+            </div>
+
+            <!-- 餐牌快速連結 -->
+            <h2 class="section-title">See Our Menu</h2>
+            <div class="menu-grid">
+                <a href="五味(EN) p.3.html#breakfast" class="menu-btn">🍳 Breakfast 6:30-11:30</a>
+                <a href="五味(EN) p.3.html#lunch" class="menu-btn">🍚 Lunch from 11:30</a>
+                <a href="五味(EN) p.3.html#tea" class="menu-btn">☕ Afternoon Tea from 14:00</a>
+                <a href="五味(EN) p.3.html#drinks" class="menu-btn">🥤 Beverages</a>
+            </div>
+
+            <!-- 兩間分店 -->
+            <h2 class="section-title">Our Locations</h2>
+            <div class="shop-grid">
+                <div class="shop-card">
+                    <h3>Hung Kiu Branch</h3>
+                    <p>📍 Shop G07, G/F, Tung Wai Court, 3 Tsing Ling Path, Tuen Mun, New Territories</p>
+                    <p>📞 Tel: 3486 8368</p>
+                    <p>🕒 Opening Hours: 6:30-17:30</p>
+                    <a href="https://www.google.com/maps/place/%E4%BA%94%E5%91%B3%E8%8C%B6%E9%A4%90%E5%BB%B3/@22.4022531,113.9757223,17z/data=!3m1!4b1!4m6!3m5!1s0x3403fb1f6f3083dd:0x2f3841f9be55473c!8m2!3d22.4022531!4d113.9782972!16s%2Fg%2F11f0l3vhqj?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" class="btn" style="margin-top: 15px; display: inline-block;">🗺️ Get Directions</a>
+                </div>
+                <div class="shop-card">
+                    <h3>Lam Tei Branch</h3>
+                    <p>📍 Shop J, G/F, The Sherwood, Lam Tei, Tuen Mun, New Territories</p>
+                    <p>📞 Tel: 3483 9551</p>
+                    <p>🕒 Opening Hours: 6:30-17:30</p>
+                    <a href="https://www.google.com/maps/place/%E4%BA%94%E5%91%B3%E9%A4%90%E5%BB%B3%EF%BC%88%E8%97%8D%E5%9C%B0%E5%BA%97%EF%BC%89/@22.4185179,113.9839529,17z/data=!3m1!4b1!4m6!3m5!1s0x3403fbacb1606bb1:0x9f27c129914babe6!8m2!3d22.418513!4d113.9865225!16s%2Fg%2F11r_k5qwqp?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" class="btn" style="margin-top: 15px; display: inline-block;">🗺️ Get Directions</a>
+                </div>
+            </div>
+
+            <!-- 重要備註 -->
+            <div class="info-note">
+                <span class="info-highlight">🚫 No reservations ｜ 💰 Cash only</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 0.8em;">© This website is an original work by a student from the Department of Translation, Lingnan University for his final year project. Designed for Five Taste. All content is based on actual interviews. The photos are provided by the restaurant and taken by the student. Do not reproduce them without prior permission. Special thanks to Boss Choy and Boss Leung for their time and support.</p>
+    </footer>
+</body>
+</html>

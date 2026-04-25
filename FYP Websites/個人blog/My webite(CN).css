@@ -1,0 +1,174 @@
+body { font-family: sans-serif; line-height: 1.8; margin: 0; background: #fafafa; }
+
+.blog-container { max-width: 800px; margin: 50px auto; padding: 40px; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+
+
+h1, h2 { color: #2c3e50; }
+
+h1 {
+  text-align: center; font-size: 48px;/* 將標題文字水平置中 */
+}
+
+h3{
+    font-weight: bold;font-style: italic;
+}
+
+.img-placeholder { background: #eee; height: 300px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: #888; }
+
+.official-link { display: inline-block; background: #d35400; color: white; padding: 15px 25px; border-radius: 5px; text-decoration: none; margin-top: 20px; }
+
+footer { text-align: center; padding: 30px; background: #333; color: #999; margin-top: 50px; font-size: 0.9em; }
+
+/* 圖片容器 */
+.image-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* 你可以根據需要調整寬度 */
+    height: 600px;    /* 統一高度 */
+    overflow: hidden; /* 確保文字彈出時不會超出框外 */
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* 圖片樣式 */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持比例不變形 */
+    display: block;
+}
+
+/* --- 第二種：原圖比例，不裁剪 (適合大圖) --- */
+.image-original {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.image-original img {
+    width: 100%;
+    height: auto;        /* 關鍵：高度自動，保持原圖比例 */
+    display: block;
+}
+
+/* Caption 初始狀態：隱藏在底部 */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    transform: translateY(0);
+
+    
+    /* 動態效果 */
+transform: translateY(100%); /* 先將文字完全移到底部看不見的地方 */
+transition: transform 0.3s ease-in-out; /* 設置 0.3 秒的平滑過渡 */}
+
+/* 當 Mouse 移上去容器時，Caption 回到原位 */
+.image-box:hover .caption {transform: translateY(0);}
+.image-original:hover .caption {transform: translateY(0);}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* 撐開三部分 */
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    position: sticky; /* 推薦：向下捲動時導航欄固定喺頂部 */
+    top: 0;
+    z-index: 1000;
+}
+
+/* 左右兩邊佔用一樣嘅空間 */
+.nav, .lang-switcher {
+    flex: 1;
+}
+
+/* 中間連結部分 */
+.nav-links {
+    flex: 15; /* 俾多啲位中間 */
+    text-align: center; /* 文字置中 */
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* 連結之間嘅距離 */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.nav-links a.active {
+    color: #f39c12; /* 橙色顯示當前頁面 */
+    font-weight: bold;
+}
+
+
+.lang-switcher {
+    font-size: 0.85rem; /* 較細嘅字體 */
+    color: #ccc;
+}
+
+.lang-switcher a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.lang-switcher a:hover {
+    color: white; /* Mouse 移上去變白 */
+    text-decoration: underline;
+}
+
+.carousel-wrapper {
+    position: relative;
+    margin: 20px 0;
+}
+
+.carousel-wrapper .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.carousel-wrapper .prev-btn {
+    left: 10px;
+}
+
+.carousel-wrapper .next-btn {
+    right: 10px;
+}
+
+.carousel-wrapper .carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-wrapper .carousel-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+}

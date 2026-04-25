@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="屯門青菱徑3號 外賣熱線3486 8368 五味是位於屯門的茶餐廳"/>
+    <meta name="keywords" content="本地茶餐廳,屯門茶餐廳"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>五味茶餐廳</title>
+    <link rel="stylesheet" href="五味(CN).css">
+    <style>
+        /* 首頁專用樣式 */
+        .welcome {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--soft-cream) 0%, var(--pure-white) 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .welcome h2 {
+            font-size: 1.8em;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .welcome p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .menu-btn {
+            background-color: var(--primary-orange);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .menu-btn:hover {
+            background-color: var(--deep-red);
+            transform: translateY(-3px);
+        }
+        
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .shop-card {
+            background-color: var(--pure-white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .shop-card h3 {
+            color: var(--primary-orange);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .shop-card p {
+            margin: 8px 0;
+        }
+        
+        .info-note {
+            background-color: var(--warm-yellow);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .info-highlight {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--deep-red, #C41E3A);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-orange);
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>五味茶餐廳</h1>
+            </div>
+            <nav>
+                <a href="五味(CN) p.1.html">首頁</a>
+                <a href="五味(CN) p.2.html">關於五味</a>
+                <a href="五味(CN) p.3.html">餐牌</a>
+                <span class="lang-switch">
+                    <a href="五味(CN) p.1.html">繁</a> | <a href="五味(EN) p.1.html">EN</a>
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Welcome -->
+            <div class="welcome">
+                <h2>歡迎光臨。</h2>
+                <p>無論你身處紅橋又或是藍地，都有我們的身影。<br>
+                清晨六點半，我們亮起燈，等你來吃個早餐；下午兩點，我們還在這裡，讓你休息片刻。<br>
+                只要你在屯門，來找我們，總有一碗熱食、一個座位，留給你。</p>
+            </div>
+
+            <!-- 餐牌快速連結 -->
+            <h2 class="section-title">查看餐牌</h2>
+            <div class="menu-grid">
+                <a href="五味(CN) p.3.html#breakfast" class="menu-btn">🍳 早餐 6:30-11:30</a>
+                <a href="五味(CN) p.3.html#lunch" class="menu-btn">🍚 午餐 11:30後</a>
+                <a href="五味(CN) p.3.html#tea" class="menu-btn">☕ 下午茶 14:00後</a>
+                <a href="五味(CN) p.3.html#drinks" class="menu-btn">🥤 飲品</a>
+            </div>
+
+            <!-- 兩間分店 -->
+            <h2 class="section-title">兩間分店</h2>
+            <div class="shop-grid">
+                <div class="shop-card">
+                    <h3> 紅橋店（五味茶餐廳）</h3>
+                    <p>📍 屯門青菱徑3號東威閣地下G07號舖</p>
+                    <p>📞 電話 3486 8368</p>
+                    <p>🕒 營業時間：6:30-17:30</p>
+                    <a href="https://www.google.com/maps/place/%E4%BA%94%E5%91%B3%E8%8C%B6%E9%A4%90%E5%BB%B3/@22.4022531,113.9757223,17z/data=!3m1!4b1!4m6!3m5!1s0x3403fb1f6f3083dd:0x2f3841f9be55473c!8m2!3d22.4022531!4d113.9782972!16s%2Fg%2F11f0l3vhqj?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" class="btn" style="margin-top: 15px; display: inline-block;">🗺️ 地址</a>
+                </div>
+                <div class="shop-card">
+                    <h3> 藍地店（五味餐廳）</h3>
+                    <p>📍 屯門豫豐花園地下J舖</p>
+                    <p>📞 電話 3483 9551</p>
+                    <p>🕒 營業時間：6:30-17:30</p>
+                    <a href="https://www.google.com/maps/place/%E4%BA%94%E5%91%B3%E9%A4%90%E5%BB%B3%EF%BC%88%E8%97%8D%E5%9C%B0%E5%BA%97%EF%BC%89/@22.4185179,113.9839529,17z/data=!3m1!4b1!4m6!3m5!1s0x3403fbacb1606bb1:0x9f27c129914babe6!8m2!3d22.418513!4d113.9865225!16s%2Fg%2F11r_k5qwqp?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" class="btn" style="margin-top: 15px; display: inline-block;">🗺️ 地址</a>
+                </div>
+            </div>
+
+            <!-- 重要備註 -->
+            <div class="info-note">
+                <span class="info-highlight">🚫 不設預約｜只收現金 💰 </span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 0.8em; margin-top: 10px;">本網站為嶺南大學翻譯系TRA4325企業傳訊項目作品，專為五味茶餐廳設計。內容基於真實訪談，文字為學生原創。相片由餐廳提供及學生拍攝，未經許可請勿轉載。</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">特別鳴謝蔡老闆及梁老闆接受訪問。</p>
+    </footer>
+</body>
+</html>

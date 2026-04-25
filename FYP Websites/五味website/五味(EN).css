@@ -1,0 +1,267 @@
+/* 顏色變數 - 跟返店內見到嘅顏色 */
+:root {
+    --primary-orange: #FF8C42;    /* 主橙色 */
+    --deep-red: #C41E3A;           /* 深紅色 */
+    --warm-yellow: #FFD93D;         /* 黃色 */
+    --dark-gray: #2C2C2C;            /* 近黑色 */
+    --pure-white: #FFFFFF;            /* 白色 */
+    --soft-cream: #FFF8F0;            /* 奶油白 */
+    --light-gray: #F5F5F5;            /* 淺灰 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--soft-cream);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 導航欄 */
+header {
+    background-color: var(--primary-orange);
+    color: var(--pure-white);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+
+
+nav a {
+    color: var(--pure-white);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--deep-red);
+}
+
+.lang-switch {
+    margin-left: 25px;
+}
+
+.lang-switch a {
+    color: var(--pure-white);
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+/* 按鈕樣式 */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-orange);
+    color: var(--pure-white);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--deep-red);
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-orange);
+    color: var(--pure-white);
+}
+
+/* 頁尾 */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--pure-white);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    font-size: 0.85em;
+}
+
+/* 卡片樣式 */
+
+
+/* 響應式 */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav a {
+        margin: 0 12px;
+    }
+    
+    .lang-switch {
+        margin-left: 12px;
+    }
+}
+
+ 
+.image-block {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* 你可以根據需要調整寬度 */
+    height: 500px;    /* 統一高度 */
+    overflow: hidden; /* 確保文字彈出時不會超出框外 */
+    border-radius: 10px;
+    margin: 20px auto;
+}
+        
+.image-block img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display:block;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+}
+
+/* Caption 初始狀態：隱藏在底部 */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    
+    /* 動態效果 */
+transform: translateY(100%); /* 先將文字完全移到底部看不見的地方 */
+transition: transform 0.3s ease-in-out; /* 設置 0.3 秒的平滑過渡 */}
+
+/* 當 Mouse 移上去容器時，Caption 回到原位 */
+.image-block:hover .caption {transform: translateY(0);}
+
+.important-remark {
+    background-color: #FFF3E0;
+    border-left: 5px solid #C41E3A;
+    padding: 15px 18px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.important-remark p {
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: #C41E3A;
+}
+
+.important-remark div {
+    margin: 6px 0;
+    font-size: 0.9em;
+    color: #2C2C2C;
+}
+
+.important-remark div strong,
+.important-remark div b {
+    font-weight: bold;
+    color: #C41E3A;  
+}
+
+.important-remark .free {
+    color: #C41E3A;
+    font-weight: bold;
+    background-color: #FFE0B5;
+    padding: 2px 6px;
+    border-radius: 12px;
+}
+
+.official-link {
+    display: block;
+    background: #1877F2;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.3s;
+}
+
+.official-link:hover {
+    background: #166BDF;
+}
+/* 飲品表格樣式 */
+.drinks-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.drinks-table th
+.drinks-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.drinks-table th span{
+    font-size: 0.85em;
+    color: #888;
+}
+
+.drinks-table th {
+    text-align: left;
+    border-bottom: 2px solid #FFD93D;
+}
+
+.drinks-table td:nth-child(2),
+.drinks-table td:nth-child(3),
+.drinks-table th:nth-child(2),
+.drinks-table th:nth-child(3) {
+    text-align: center;
+}
+
+.drinks-table td span {
+    font-size: 0.85em;
+    color: #888;
+}
